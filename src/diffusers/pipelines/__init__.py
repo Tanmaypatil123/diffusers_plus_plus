@@ -26,6 +26,7 @@ _import_structure = {
     "ledits_pp": [],
     "stable_diffusion": [],
     "stable_diffusion_xl": [],
+    "oms_diffusion" : [],
 }
 
 try:
@@ -247,10 +248,8 @@ else:
         "WuerstchenDecoderPipeline",
         "WuerstchenPriorPipeline",
     ]
-    _import_structure["oms_animate_diffusion_pipeline"] = ["OmsAnimateDiffusionPipeline"]
-    _import_structure["oms_diffusion_controlnet_pipeline"] = ["OmsDiffusionControlNetPipeline"]
-    _import_structure["oms_diffusion_inpaint_pipeline"] = ["OmsDiffusionInpaintPipeline"]
-    _import_structure["oms_diffusion_pipeline"] = ["OmsDiffusionPipeline"]
+    
+    _import_structure["oms_diffusion"] = ["OmsDiffusionPipeline","ClothAdapter"]
 
 try:
     if not is_onnx_available():
@@ -501,6 +500,10 @@ if TYPE_CHECKING or DIFFUSERS_SLOW_IMPORT:
             WuerstchenCombinedPipeline,
             WuerstchenDecoderPipeline,
             WuerstchenPriorPipeline,
+        )
+        from .oms import (
+            ClothAdapter,
+            OmsDiffusionPipeline
         )
 
         try:
