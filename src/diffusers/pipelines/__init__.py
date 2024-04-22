@@ -247,6 +247,11 @@ else:
         "WuerstchenDecoderPipeline",
         "WuerstchenPriorPipeline",
     ]
+    _import_structure["oms_animate_diffusion_pipeline"] = ["OmsAnimateDiffusionPipeline"]
+    _import_structure["oms_diffusion_controlnet_pipeline"] = ["OmsDiffusionControlNetPipeline"]
+    _import_structure["oms_diffusion_inpaint_pipeline"] = ["OmsDiffusionInpaintPipeline"]
+    _import_structure["oms_diffusion_pipeline"] = ["OmsDiffusionPipeline"]
+
 try:
     if not is_onnx_available():
         raise OptionalDependencyNotAvailable()
