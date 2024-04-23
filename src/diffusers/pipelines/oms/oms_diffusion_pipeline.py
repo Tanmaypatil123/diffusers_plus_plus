@@ -1,4 +1,4 @@
-from diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion import *
+from ...pipelines.stable_diffusion.pipeline_stable_diffusion import *
 
 
 class OmsDiffusionPipeline(StableDiffusionPipeline):

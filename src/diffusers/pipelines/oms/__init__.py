@@ -18,7 +18,6 @@ _dummy_objects = {}
 
 _import_structure = {
     "oms_pipeline": [],
-    "cloth_adapter" : []
 }
 
 
@@ -34,14 +33,10 @@ else:
     _import_structure["oms_pipeline"].extend(
         [
             "OmsDiffusionPipeline",
+            "ClothAdapter"
         ]
     )
-
-    _import_structure["cloth_adapter"].extend(
-        [
-            "ClothAdapter",
-        ]
-    )
+    
 if TYPE_CHECKING or DIFFUSERS_SLOW_IMPORT:
     try:
         if not (is_torch_available() and is_transformers_available()):
