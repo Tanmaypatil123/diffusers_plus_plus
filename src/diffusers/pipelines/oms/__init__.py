@@ -44,7 +44,7 @@ if TYPE_CHECKING or DIFFUSERS_SLOW_IMPORT:
     except OptionalDependencyNotAvailable:
         from ...utils.dummy_torch_and_transformers_objects import *
     else:
-        from .oms_diffusion_pipeline import (
+        from .oms_pipeline import (
             OmsDiffusionPipeline,
         )
         from .cloth_adapter import (
