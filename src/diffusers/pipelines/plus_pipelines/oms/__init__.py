@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING
 
-from ...utils import (
+from ....utils import (
     DIFFUSERS_SLOW_IMPORT,
     OptionalDependencyNotAvailable,
     _LazyModule,
@@ -25,7 +25,7 @@ try:
     if not (is_torch_available() and is_transformers_available()):
         raise OptionalDependencyNotAvailable()
 except OptionalDependencyNotAvailable:
-    from ...utils import dummy_torch_and_transformers_objects
+    from ....utils import dummy_torch_and_transformers_objects
 
 
     _dummy_objects.update(get_objects_from_module(dummy_torch_and_transformers_objects))
@@ -42,14 +42,13 @@ if TYPE_CHECKING or DIFFUSERS_SLOW_IMPORT:
         if not (is_torch_available() and is_transformers_available()):
             raise OptionalDependencyNotAvailable()
     except OptionalDependencyNotAvailable:
-        from ...utils.dummy_torch_and_transformers_objects import *
+        from ....utils.dummy_torch_and_transformers_objects import *
     else:
         from .oms_pipeline import (
             OmsDiffusionPipeline,
-        )
-        from .cloth_adapter import (
             ClothAdapter
         )
+    
 
 else:
     import sys

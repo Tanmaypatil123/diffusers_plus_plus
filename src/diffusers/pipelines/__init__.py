@@ -26,7 +26,7 @@ _import_structure = {
     "ledits_pp": [],
     "stable_diffusion": [],
     "stable_diffusion_xl": [],
-    "oms_diffusion" : [],
+    "plus_pipelines": [],
 }
 
 try:
@@ -248,8 +248,6 @@ else:
         "WuerstchenDecoderPipeline",
         "WuerstchenPriorPipeline",
     ]
-    
-    _import_structure["oms_diffusion"] = ["OmsDiffusionPipeline","ClothAdapter"]
 
 try:
     if not is_onnx_available():
@@ -320,6 +318,12 @@ else:
     _import_structure["stable_diffusion_xl"].extend(
         [
             "FlaxStableDiffusionXLPipeline",
+        ]
+    )
+    _import_structure["plus_pipelines"].extend(
+        [
+            "OmsDiffusionPipeline",
+            "ClothAdapter"
         ]
     )
 
@@ -501,9 +505,9 @@ if TYPE_CHECKING or DIFFUSERS_SLOW_IMPORT:
             WuerstchenDecoderPipeline,
             WuerstchenPriorPipeline,
         )
-        from .oms import (
-            ClothAdapter,
-            OmsDiffusionPipeline
+        from .plus_pipelines import (
+            OmsDiffusionPipeline,
+            ClothAdapter
         )
 
         try:
