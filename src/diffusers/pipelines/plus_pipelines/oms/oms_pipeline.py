@@ -15,10 +15,6 @@ if is_torch2_available():
 else:
     from .attention_processor import REFAttnProcessor, AttnProcessor
 
-
-
-
-
 def prepare_image(image, height, width):
     if image is None:
         raise ValueError("`image` input cannot be undefined.")
